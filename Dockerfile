@@ -2,9 +2,7 @@ FROM thstangenberg/baseimage:latest
 
 MAINTAINER Thorben Stangenberg <thorben@stangenberg.net>
 
-# todo @thorben move to baseimage
-ENV DEBIAN_FRONTEND=noninteractive \
-	DOCKER_DEBUG=false \
+ENV DOCKER_DEBUG=false \
  	DOCKER_API_CORS=false \
  	DOCKER_LOG_LEVEL=info 
 
