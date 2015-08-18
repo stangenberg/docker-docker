@@ -6,6 +6,14 @@ ENV DOCKER_DEBUG=false \
  	DOCKER_API_CORS=false \
  	DOCKER_LOG_LEVEL=info 
 
+# install prerequisites
+RUN apt-get update -qq && apt-get install -qqy \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    lxc \
+    iptables
+
 # install docker
 RUN curl -sSL https://get.docker.com/ | sh
 
