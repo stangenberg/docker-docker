@@ -2,7 +2,7 @@ FROM thstangenberg/baseimage:latest
 
 MAINTAINER Thorben Stangenberg <thorben@stangenberg.net>
 
-ENV DOCKER_LOG_LEVEL=info /
+ENV DOCKER_LOG_LEVEL=info \
     DOCKER_PORT=2375
 
 # install prerequisites
