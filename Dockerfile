@@ -2,9 +2,8 @@ FROM thstangenberg/baseimage:latest
 
 MAINTAINER Thorben Stangenberg <thorben@stangenberg.net>
 
-ENV DOCKER_DEBUG=false \
- 	DOCKER_API_CORS=false \
- 	DOCKER_LOG_LEVEL=info 
+ENV DOCKER_LOG_LEVEL=info /
+    DOCKER_PORT=2375
 
 # install prerequisites
 RUN apt-get update -qq && apt-get install -qqy \
@@ -16,9 +15,6 @@ RUN apt-get update -qq && apt-get install -qqy \
 
 # install docker
 RUN curl -sSL https://get.docker.com/ | sh
-
-# accept ip and socket connection
-RUN echo 'DOCKER_OPTS="-H :2375 -H unix:///var/run/docker.sock"' >> /etc/default/docker
 
 # volume for docker
 VOLUME /var/lib/docker
